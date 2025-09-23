@@ -1,16 +1,21 @@
 # flutter_application_1
 
-A new Flutter project.
+Выполнил Тихонов Дмитрий ВМК-22 Задание: Написать инструкцию по установке Flutter на visual studio code
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+# Инструкция:
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. Установить GitBash и Visual Studio Code
+2. Авторизоваться в GitBash и запустить Visual Studio Code {} {}
+3. В Visual Studio Code в левом панельном меню выбрать квадратики {}{}
+4. Написать flutter и установить плагин Flutter от Dart Code
+5. Нажать ctrl + shift + p в появившемся окне написать flutter
+6. Выбрать flutter new project
+7. Выбрать папку куда загрузится репозиторий с гит хаба отвечающий за работу с flutter
+8. Дождаться загрузки
+9. В левом нижнем углу появиться уведомление о добавлении flutter в path --- добавляем
+10. Нажать ctrl + shift + p в появившемся окне написать flutter ---- Выбрать flutter new project --- выбрать flutter aplication
+11. Создалась самое простое приложение на flutter счетчик
+12. Запустить приложение для проверки в браузере либо edge или chrome
+13. Все готово можете писать собственные приложения!
