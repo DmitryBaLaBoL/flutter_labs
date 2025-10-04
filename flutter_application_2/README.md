@@ -1,16 +1,7 @@
 # flutter_application_2
 
-A new Flutter project.
+Лабораторная работа №2 (Компоновка виджетов) Выполнил: Тихонов Дмитрий ВМК-22 Индетификмционный номер В-22-14
 
-## Getting Started
+Нужно выполнить индивидуальное задание: Задание 4 варианта --- 4.	Добавить в тело экрана виджет Stack. В виджет Stack добавить контейнеры разного размера и задать им цвета в соответствии с цветами радуги. Виджет Stack и контейнеры отцентрировать.
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Виджет Stack позволяет располагать одни элементы поверх других. Чтобы добавить в него контейнеры я использовал параметр children, а чтобы их отцентрировать я использовал параметр alignment.
