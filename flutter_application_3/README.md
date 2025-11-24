@@ -1,16 +1,22 @@
 # flutter_application_3
 
-A new Flutter project.
+Лабораторная работа №3 "Взаимодействие с пользователем и навигация" Вариант 4 - индетификатор В-22-14
 
-## Getting Started
+Задание: Реализовать калькулятор кинетической энергии. На первом экране должны располагаться 2 числовых поля ввода (масса тела и скорость), а также чек-бокс на согласие обработки данных. Реализовать валидацию полей и чек-бокса. Передать данные с первого экрана на второй экран произвести расчеты и отобразить. 
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+inputFormatters — это свойство виджета TextField или TextFormField, которое позволяет управлять вводом данных и ограничивать их формат.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Применение inputFormatters:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+    Ограничение типов символов (например, только цифры, буквы, специальные символы).
+    Форматирование текста (например, маска ввода номера телефона или даты).
+    Проверка валидности ввода в реальном времени.
+
+Основные классы для inputFormatters
+
+    FilteringTextInputFormatter – фильтрует вводимые символы по заданному шаблону.
+    LengthLimitingTextInputFormatter – ограничивает длину текста.
+    TextInputFormatter – базовый класс для создания кастомных форматов.
+
+Выполнил: Тихонов Дмитрий ВМК-22
