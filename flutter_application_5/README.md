@@ -1,16 +1,4 @@
 # flutter_application_5
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Лабораторная работа №5:Хранение данных. Выполнил Тихонов Дмитрий ВМК-22 За основу взята прошлая лабораторная работа в которой был создан калькулятор кинетической энергии с использованием кубит который позволяет менять состояние не изменяя экрана. 
+В этой лабораторной работе я использовал SharedPrefences для сохранения результатов выполнения программы. SharedPreferences – постоянное хранилище, используемое приложениями для хранения простых данных. Это хранилище является относительно постоянным, пользователь может зайти в настройки приложения и очистить данные приложения, тем самым очистив все данные в хранилище. Принимает данные в формате ключ – значения. Поддерживаемые типы данных: int, double, bool, String и List.
