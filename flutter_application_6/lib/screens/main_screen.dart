@@ -5,7 +5,49 @@ import 'photo_detail_screen.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({super.key});
-
+Widget _buildImageWidget(String imageUrl, bool isDemoData) {
+  if (isDemoData && imageUrl.startsWith('assets/')) {
+    // Для локальных файлов из assets
+    return Image.asset(
+      imageUrl,
+      width: 60,
+      height: 60,
+      fit: BoxFit.cover,
+    );
+  } else {
+    // Для сетевых изображений
+    return Image.network(
+      imageUrl,
+      width: 60,
+      height: 60,
+      fit: BoxFit.cover,
+      loadingBuilder: (context, child, loadingProgress) {
+        if (loadingProgress == null) return child;
+        return Center(
+          child: CircularProgressIndicator(
+            value: loadingProgress.expectedTotalBytes != null
+                ? loadingProgress.cumulativeBytesLoaded /
+                    loadingProgress.expectedTotalBytes!
+                : null,
+          ),
+        );
+      },
+      errorBuilder: (context, error, stackTrace) {
+        return Container(
+          color: Colors.grey[300],
+          child: const Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(Icons.photo, size: 20, color: Colors.grey),
+              SizedBox(height: 4),
+              Text('Фото', style: TextStyle(fontSize: 10)),
+            ],
+          ),
+        );
+      },
+    );
+  }
+}
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -107,36 +149,7 @@ class MainScreen extends StatelessWidget {
   ),
   child: ClipRRect(
     borderRadius: BorderRadius.circular(8),
-    child: Image.network(
-      photo.imgSrc,
-      width: 60,
-      height: 60,
-      fit: BoxFit.cover,
-      loadingBuilder: (context, child, loadingProgress) {
-        if (loadingProgress == null) return child;
-        return Center(
-          child: CircularProgressIndicator(
-            value: loadingProgress.expectedTotalBytes != null
-                ? loadingProgress.cumulativeBytesLoaded /
-                    loadingProgress.expectedTotalBytes!
-                : null,
-          ),
-        );
-      },
-      errorBuilder: (context, error, stackTrace) {
-        return Container(
-          color: Colors.grey[300],
-          child: const Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(Icons.photo, size: 20, color: Colors.grey),
-              SizedBox(height: 4),
-              Text('Фото', style: TextStyle(fontSize: 10)),
-            ],
-          ),
-        );
-      },
-    ),
+    child: _buildImageWidget(photo.imgSrc, state.isDemoData),  // Изменено!
   ),
 ),
                                 title: Text('Камера: ${photo.camera.fullName}'),

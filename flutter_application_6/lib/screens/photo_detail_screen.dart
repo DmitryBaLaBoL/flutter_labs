@@ -35,32 +35,54 @@ class PhotoDetailScreen extends StatelessWidget {
               ),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(12),
-                child: Image.network(
-                  photo.imgSrc,
-                  fit: BoxFit.cover,
-                  loadingBuilder: (context, child, loadingProgress) {
-                    if (loadingProgress == null) return child;
-                    return Center(
-                      child: CircularProgressIndicator(
-                        value: loadingProgress.expectedTotalBytes != null
-                            ? loadingProgress.cumulativeBytesLoaded /
-                                loadingProgress.expectedTotalBytes!
-                            : null,
-                      ),
-                    );
-                  },
-                  errorBuilder: (context, error, stackTrace) {
-                    return const Center(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(Icons.broken_image, size: 64),
-                          Text('Ошибка загрузки изображения'),
-                        ],
-                      ),
-                    );
-                  },
+                child: Container(
+  width: double.infinity,
+  height: 300,
+  decoration: BoxDecoration(
+    borderRadius: BorderRadius.circular(12),
+    boxShadow: [
+      BoxShadow(
+        color: Colors.black.withOpacity(0.3),
+        blurRadius: 8,
+        offset: const Offset(0, 4),
+      ),
+    ],
+  ),
+  child: ClipRRect(
+    borderRadius: BorderRadius.circular(12),
+    child: photo.imgSrc.startsWith('assets/')
+        ? Image.asset(
+            photo.imgSrc,
+            fit: BoxFit.cover,
+          )
+        : Image.network(
+            photo.imgSrc,
+            fit: BoxFit.cover,
+            loadingBuilder: (context, child, loadingProgress) {
+              if (loadingProgress == null) return child;
+              return Center(
+                child: CircularProgressIndicator(
+                  value: loadingProgress.expectedTotalBytes != null
+                      ? loadingProgress.cumulativeBytesLoaded /
+                          loadingProgress.expectedTotalBytes!
+                      : null,
                 ),
+              );
+            },
+            errorBuilder: (context, error, stackTrace) {
+              return const Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Icons.broken_image, size: 64),
+                    Text('Ошибка загрузки изображения'),
+                  ],
+                ),
+              );
+            },
+          ),
+  ),
+),
               ),
             ),
 
